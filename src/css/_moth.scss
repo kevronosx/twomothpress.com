@@ -1,0 +1,174 @@
+.branding {
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 25px 0 10px;
+}
+
+.links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  li {
+    margin: 5px auto;
+    a {
+      display: block;
+      color: #fff;
+    }
+  }
+}
+
+.stage {
+  display:none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 2000;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 200ms, transform 200ms ease-in-out;
+}
+
+.stage div {
+  position: absolute;
+}
+
+.stage--moth {
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 100px;
+  margin: -50px 0 0 -20px;
+}
+
+.stage--kanji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 30px;
+  color: #fff;
+  margin: -15px 0 0 -75px;
+}
+
+.stage--kanji .left {
+  float: left;
+}
+
+.stage--kanji .right {
+  float: right;
+}
+
+.stage--left-leaf {
+  top: 20px;
+  left: -217px;
+  width: 123px;
+  height: 70px;
+}
+
+.stage--right-leaf {
+  top: 14px;
+  left: 132px;
+  width: 123px;
+  height: 70px;
+}
+
+.stage--center-stalk {
+  left: 4px;
+  z-index: 20;
+}
+
+.stage--center-stalk:hover {
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+  transform: scale(1.2);
+}
+
+.stage--top-moth--container {
+  top: -230px;
+  left: -259px;
+  width: 555px;
+  height: 285px;
+  z-index: 2000;
+}
+
+.stage--bottom-moth-container {
+  top: 50px;
+  left: -254px;
+  width: 555px;
+  height: 285px;
+  z-index: 2000;
+}
+
+.start {
+  .branding,
+  .links {
+    opacity: 0;
+    animation: FadeIn 1s ease-in-out 6s forwards;
+  }
+  .stage--kanji {
+    opacity: 0;
+    animation: FadeIn 1s ease-in-out 6s forwards;
+  }
+  .stage--left-leaf {
+    animation: LeftLeaf 7.10s ease-in-out;
+  }
+  .stage--right-leaf {
+    animation: RightLeaf 7.10s ease-in-out;
+  }
+  .stage--center-stalk {
+    animation: Stalk 1.95s ease-in-out forwards;
+    &.pulse {
+      animation: Pulse 1s ease-in-out 5 forwards;
+    }
+  }
+  .stage--top-moth--container {
+    animation: TopMothPath 6.39s ease-in-out;
+  }
+  .stage--top-moth img {
+    animation: FlapTop .5s ease-in-out 14 alternate;
+  }
+  .stage--bottom-moth-container {
+    animation: BottomMothPath 6.39s ease-in-out;
+  }
+  .stage--bottom-moth img {
+    animation: FlapBottom .5s ease-in-out 14 alternate;
+  }
+}
+
+@media all and (max-width:768px) {
+  .branding {
+    font-size: 50px;
+  }
+  .stage--moth {
+    transform: scale(.6);
+  }
+  .links {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-height:414px) {
+  .branding {
+    font-size: 50px;
+  }
+  .stage--moth {
+    transform: scale(.4);
+  }
+  .links {
+    flex-direction: row;
+  }
+}

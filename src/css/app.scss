@@ -1,0 +1,29 @@
+@import "_moth-keyframes";
+@import "_moth";
+html,
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+h2,
+h3,
+p,
+ul,
+li,
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  list-style: none;
+}
+
+body {
+  font-family: 'Josefin Sans Std Light', "helvetica neue", helvetica, serif;
+  background: #111;
+}
