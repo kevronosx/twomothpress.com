@@ -40,6 +40,7 @@
   perspective: 1000px;
   background: rgba(0, 0, 0, 0.8);
   transition: opacity 200ms, transform 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .stage div {
@@ -89,12 +90,6 @@
 .stage--center-stalk {
   left: 4px;
   z-index: 20;
-}
-
-.stage--center-stalk:hover {
-  cursor: pointer;
-  transition: transform 200ms ease-in-out;
-  transform: scale(1.2);
 }
 
 .stage--top-moth--container {
@@ -154,7 +149,7 @@
     font-size: 50px;
   }
   .stage--moth {
-    transform: scale(.6);
+    transform: scale(.5);
   }
   .links {
     flex-direction: column;
